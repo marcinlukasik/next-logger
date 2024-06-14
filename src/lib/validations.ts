@@ -6,6 +6,7 @@ export const logSchema = z
   .object({
     id: z.optional(z.string()),
     statusCode: z.string(),
+    method: z.string(),
     url: z.string(),
     payload: record,
     response: record,

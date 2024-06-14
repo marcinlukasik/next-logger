@@ -71,8 +71,12 @@ export const Log = () => {
             </AccordionTrigger>
             <AccordionContent className="bg-gray-50">
               <div className="pt-6 pb-2 px-4">
-                <span className="font-semibold">Status code:</span>{" "}
+                <span className="font-semibold">Status Code:</span>{" "}
                 <span className="font-medium">{item.statusCode}</span>
+              </div>
+              <div className="pb-2 px-4">
+                <span className="font-semibold">Request Method:</span>{" "}
+                <span className="font-medium">{item.method}</span>
               </div>
               {item.payload && (
                 <PreviewLog name="Payload" logs={item.payload} />
