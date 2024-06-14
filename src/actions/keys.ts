@@ -8,6 +8,10 @@ export async function addSecretKeyAction(
   prevFormState: AddSecretKeyFormState,
   formData: FormData
 ) {
-  cookies().set(secretKeyCookieName, formData.get("secretKey") as string);
+  cookies().set(secretKeyCookieName, formData.get("secretKey") as string, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+  });
   return { updated: crypto.randomUUID() };
 }
